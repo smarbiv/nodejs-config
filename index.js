@@ -18,7 +18,7 @@ module.exports = function (configDirPath, environments) {
     if (!helper.isset(configDirPath))
         configDirPath = "";
 
-    var env = process.env.NODE_ENV = environmentDetector.detect(environments);
+    var env = environmentDetector.detect(environments);
 
     return new Config(new FileLoader(path.join(configDirPath, 'config')), env)
 };
